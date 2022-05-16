@@ -1,19 +1,117 @@
-/* CSS Document */
-*, *::after, *::before {
-  box-sizing:border-box;  
+/*FONTS*/
+@font-face {
+    font-family: Jumpman;
+    src: url(Jumpman.ttf);
 }
 
-html, body {
-  height:100%;
-  margin:0;
+@font-face {
+    font-family: Emulogic;
+    src: url(Emulogic-zrEw.ttf);
+}
+
+
+/*CSS VAN SANNE*/
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(136, 182, 218, 1) 70%);
+    margin: 0;
+    padding: 0;
 }
 
 button:not([disabled]) {
-  cursor:pointer;
+    cursor: pointer;
 }
 
-/* jouw CSS vanaf hier */
+
+
+/*EIGEN CODE*/
+header {
+    position: relative;
+    top: 0;
+}
 
 h1 {
-  color:crimson;
+    font-family: Jumpman, sans-serif;
+    font-size: 3em;
+    text-shadow: -0.06em -0.06em 0 rgb(243, 187, 83), 0.06em -0.06em 0 rgb(243, 187, 83), -0.06em 0.06em 0 rgb(243, 187, 83), 0.06em 0.06em 0 rgb(243, 187, 83);
+    color: rgb(210, 44, 48);
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: .3em;
 }
+
+p {
+    font-family: Emulogic;
+    font-size: 1em;
+    color: #ffffff;
+    margin: 0em 1.5em 1em 1.5em;
+    text-align: center;
+}
+
+img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    /*    height: auto;*/
+    position: absolute;
+    top: 0;
+
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+/*
+<ol>
+            <li>
+                <a href="#">eerste punt in tijd</a>
+            </li>
+            <li>
+                <a href="#">tweede punt in tijd</a>
+            </li>
+            <li>
+                <a href="#">derde punt in tijd</a>
+            </li>
+            <li>
+                <a href="#">vierde punt in tijd</a>
+            </li>
+            <li>
+                <a href="#">vijde punt in tijd</a>
+            </li>
+            <li>
+                <a href="#">zesde punt in tijd</a>
+            </li>
+            <li>
+                <a href="#">zevende punt in tijd</a>
+            </li>
+            <li>
+                <a href="#">achste punt in tijd</a>
+            </li>
+            <li>
+                <a href="#">negende punt in tijd</a>
+            </li>
+            <li>
+                <a href="#">tiende punt in tijd</a>
+            </li>
+            <li>
+                <a href="#">elfde punt in tijd</a>
+            </li>
+        </ol>
+*/

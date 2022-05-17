@@ -1,12 +1,20 @@
 /*FONTS*/
 @font-face {
-    font-family: Jumpman;
-    src: url(Jumpman.ttf);
+    font-family: 'jumpman';
+    src: url('../fonts/jumpman-webfont.woff2') format('woff2'),
+        url('../fonts/fontsjumpman-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 @font-face {
-    font-family: Emulogic;
-    src: url(Emulogic-zrEw.ttf);
+    font-family: 'emulogic';
+    src: url('../fonts/emulogic-zrew-webfont.woff2') format('woff2'),
+        url('../fonts/emulogic-zrew-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 /**code Sanne**/
@@ -27,7 +35,7 @@ html {
 
 body {
     background: rgb(255, 255, 255);
-    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(136, 182, 218, 1) 70%);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(136, 182, 218, 1) 90%);
     margin: 0;
     padding: 0;
 }
@@ -39,7 +47,7 @@ header {
 }
 
 h1 {
-    font-family: Jumpman, sans-serif;
+    font-family: 'jumpman', sans-serif;
     font-size: 3em;
     text-shadow: -0.06em -0.06em 0 rgb(243, 187, 83), 0.06em -0.06em 0 rgb(243, 187, 83), -0.06em 0.06em 0 rgb(243, 187, 83), 0.06em 0.06em 0 rgb(243, 187, 83);
     color: rgb(210, 44, 48);
@@ -49,7 +57,7 @@ h1 {
 }
 
 p {
-    font-family: Emulogic;
+    font-family: 'emulogic', sans-serif;
     font-size: 1em;
     color: #ffffff;
     margin: 0em 1.5em 1em 1.5em;
@@ -76,13 +84,38 @@ section {
     margin: 0 8%;
 }
 
+/*aapjes die gaan veranderen in javascript*/
+img.ikHebKleurGekregen1 {
+    background-image: url('../images/DK_1986.svg');
+}
+
+img.ikHebKleurGekregen2 {
+    background-image: url('../images/DK_1988.svg');
+}
+
+img.ikHebKleurGekregen3 {
+    background-image: url('../images/DK_1994.png');
+}
+
+img.ikHebKleurGekregen4 {
+    background-image: url('../images/DK_1999.png');
+}
+
+img.ikHebKleurGekregen5 {
+    background-image: url('../images/DK_2010.png');
+}
+
+img.ikHebKleurGekregen6 {
+    background-image: url('../images/DK_2014.png');
+}
+
 /**code Sanne**/
 section button {
     appearance: none;
     background: none;
     border: none;
     font: inherit;
-    transition: transform 1s;
+
 }
 
 section button:hover {
@@ -96,14 +129,18 @@ section button:focus-visible {
     box-shadow: 0 0 0 .25em yellow;
 }
 
-section button:active {
-    transform: perspective(5em) rotatey(-1turn);
-    transition: 0s;
-}
-
 section button img {
+    position: relative;
+    display: block;
     width: 4em;
     height: 4em;
+    transform: perspective(5em) rotatey(0turn);
+    transition: transform 1s;
+}
+
+section button:active img {
+    transform: perspective(5em) rotatey(-1turn);
+    transition: 0s;
 }
 
 /*Donkey Kong aapjes*/
@@ -122,6 +159,32 @@ ol li {
 }
 
 ol li img {
+    position: absolute;
+    display: block;
     width: 10%;
     height: auto;
+}
+
+/**code Sanne**/
+@media (prefers-reduced-motion:no-preference) {
+    ol li img:hover {
+        animation-name: springen;
+        animation-duration: 0.5s;
+        animation-fill-mode: none;
+        animation-iteration-count: 1;
+        animation-delay: 0s;
+    }
+}
+
+@keyframes springen {
+    0% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    }
+
+
+    100% {
+        transform: translateY(-5em);
+        animation-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
+    }
 }

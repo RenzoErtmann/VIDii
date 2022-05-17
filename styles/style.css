@@ -9,14 +9,18 @@
     src: url(Emulogic-zrEw.ttf);
 }
 
-
-/*CSS VAN SANNE*/
+/**code Sanne**/
 *,
 *::after,
 *::before {
     box-sizing: border-box;
 }
 
+button:not([disabled]) {
+    cursor: pointer;
+}
+
+/*EIGEN CODE*/
 html {
     height: 100%;
 }
@@ -28,13 +32,7 @@ body {
     padding: 0;
 }
 
-button:not([disabled]) {
-    cursor: pointer;
-}
-
-
-
-/*EIGEN CODE*/
+/*tekst boven in het scherm*/
 header {
     position: relative;
     top: 0;
@@ -58,60 +56,72 @@ p {
     text-align: center;
 }
 
+/*achtergrond jungle*/
 img {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    /*    height: auto;*/
     position: absolute;
     top: 0;
-
 }
 
-li {
+/*buttons*/
+section {
+    display: flex;
+    position: relative;
+    top: 20em;
+    grid-template-columns: auto auto auto auto auto auto;
+    column-gap: 9em;
+    justify-content: center;
+    margin: 0 8%;
+}
+
+/**code Sanne**/
+section button {
+    appearance: none;
+    background: none;
+    border: none;
+    font: inherit;
+    transition: transform 1s;
+}
+
+section button:hover {
+    filter:
+        drop-shadow(0 0 .25em yellow) drop-shadow(0 0 .5em yellow);
+    cursor: pointer;
+}
+
+section button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 .25em yellow;
+}
+
+section button:active {
+    transform: perspective(5em) rotatey(-1turn);
+    transition: 0s;
+}
+
+section button img {
+    width: 4em;
+    height: 4em;
+}
+
+/*Donkey Kong aapjes*/
+ol {
+    display: grid;
+    position: relative;
+    top: 24.5em;
+    grid-template-columns: auto auto auto auto auto auto;
+    column-gap: 1em;
+    align-content: center;
+    margin: 0 5%;
+}
+
+ol li {
     list-style-type: none;
 }
 
-a {
-    color: #ffffff;
-    text-decoration: none;
+ol li img {
+    width: 10%;
+    height: auto;
 }
-
-
-/*
-<ol>
-            <li>
-                <a href="#">eerste punt in tijd</a>
-            </li>
-            <li>
-                <a href="#">tweede punt in tijd</a>
-            </li>
-            <li>
-                <a href="#">derde punt in tijd</a>
-            </li>
-            <li>
-                <a href="#">vierde punt in tijd</a>
-            </li>
-            <li>
-                <a href="#">vijde punt in tijd</a>
-            </li>
-            <li>
-                <a href="#">zesde punt in tijd</a>
-            </li>
-            <li>
-                <a href="#">zevende punt in tijd</a>
-            </li>
-            <li>
-                <a href="#">achste punt in tijd</a>
-            </li>
-            <li>
-                <a href="#">negende punt in tijd</a>
-            </li>
-            <li>
-                <a href="#">tiende punt in tijd</a>
-            </li>
-            <li>
-                <a href="#">elfde punt in tijd</a>
-            </li>
-        </ol>
-*/

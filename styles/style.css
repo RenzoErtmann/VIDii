@@ -14,32 +14,67 @@
         url('../fonts/emulogic-zrew-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
+
+/********************/
 /**code Sanne**/
 *,
 *::after,
 *::before {
     box-sizing: border-box;
+    --zwart: #000000;
+    --witte-achtergrond: #ffffff;
+    --geel: #ffff00;
+    --dropshadow-kwart: 0 0 .25em;
+    --dropshadow-half: 0 0 .5em
 }
 
 button:not([disabled]) {
     cursor: pointer;
 }
 
+
+/********************/
 /*EIGEN CODE*/
 html {
     height: 100%;
 }
 
 body {
-    background: rgb(255, 255, 255);
+    background: var(--witte-achtergrond);
     background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(136, 182, 218, 1) 90%);
     margin: 0;
     padding: 0;
 }
 
+
+/********************/
+/*nightmodus button */
+main > button {
+    position: fixed;
+    top: 5.8%;
+    right: 4%;
+    font-family: 'jumpman', sans-serif;
+    font-size: 16pt;
+    text-shadow: -0.06em -0.06em 0 rgb(243, 187, 83), 0.06em -0.06em 0 rgb(243, 187, 83), -0.06em 0.06em 0 rgb(243, 187, 83), 0.06em 0.06em 0 rgb(243, 187, 83);
+    color: rgb(210, 44, 48);
+    background-color: var(--zwart);
+    filter: drop-shadow(0 0 .25em rgb(243, 187, 83)) drop-shadow(0 0 .5em rgb(243, 187, 83));
+}
+
+main > button:nth-of-type(2) {
+    left: 13%;
+    right: unset;
+}
+
+.dark-mode {
+    background: rgb(106, 106, 106);
+    background: linear-gradient(0deg, rgba(106, 106, 106, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+
+/********************/
 /*tekst boven in het scherm*/
 header {
     position: relative;
@@ -59,31 +94,67 @@ h1 {
 p {
     font-family: 'emulogic', sans-serif;
     font-size: 1em;
-    color: #ffffff;
+    color: var(--witte-achtergrond);
     margin: 0em 1.5em 1em 1.5em;
     text-align: center;
 }
 
+
+/********************/
 /*achtergrond jungle*/
-img {
+main > img:first-of-type {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    position: absolute;
+    object-position: left center;
+    position: fixed;
     top: 0;
+    left: 0;
 }
 
-/*buttons*/
-section {
-    display: flex;
-    position: relative;
-    top: 20em;
-    grid-template-columns: auto auto auto auto auto auto;
-    column-gap: 9em;
-    justify-content: center;
-    margin: 0 8%;
+
+/********************/
+/*blote bipsje mario*/
+main > img:nth-of-type(2) {
+    position: fixed;
+    display: block;
+    width: 7vw;
+    height: auto;
+    top: calc(63vh + 5em);
+    left: 12vw;
+    animation-name: rennen;
+    animation-duration: 4s;
+    animation-delay: 3s;
+    opacity: 0;
 }
 
+@keyframes rennen {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    20%,
+    60% {
+        left: 12vw;
+    }
+
+    98% {
+        left: 95vw;
+        opacity: 1;
+    }
+
+    100% {
+        left: 100vw;
+        opacity: 0;
+    }
+}
+
+
+/********************/
 /*aapjes die gaan veranderen in javascript*/
 img.ikHebKleurGekregen1 {
     background-image: url('../images/DK_1986.svg');
@@ -109,24 +180,30 @@ img.ikHebKleurGekregen6 {
     background-image: url('../images/DK_2014.png');
 }
 
+
+/********************/
 /**code Sanne**/
 section button {
     appearance: none;
     background: none;
     border: none;
     font: inherit;
+}
 
+section button {
+    filter:
+        drop-shadow(var(--dropshadow-kwart) var(--geel)) drop-shadow(var(--dropshadow-half) var(--geel));
 }
 
 section button:hover {
     filter:
-        drop-shadow(0 0 .25em yellow) drop-shadow(0 0 .5em yellow);
+        drop-shadow(var(--dropshadow-kwart) var(--geel)) drop-shadow(var(--dropshadow-half) var(--geel)) drop-shadow(var(--dropshadow-kwart) var(--geel)) drop-shadow(var(--dropshadow-half) var(--geel));
     cursor: pointer;
 }
 
 section button:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 .25em yellow;
+    box-shadow: 0 0 0 .25em var(--geel);
 }
 
 section button img {
@@ -143,15 +220,30 @@ section button:active img {
     transition: 0s;
 }
 
+
+/********************/
+/*buttons*/
+section {
+    display: grid;
+    position: relative;
+    top: 19em;
+    grid-template-columns: auto auto auto auto auto auto;
+    column-gap: 8em;
+    justify-content: center;
+    margin: 0 6% 0 20%;
+}
+
+
+/********************/
 /*Donkey Kong aapjes*/
 ol {
     display: grid;
     position: relative;
-    top: 24.5em;
+    top: 22.5em;
     grid-template-columns: auto auto auto auto auto auto;
     column-gap: 1em;
     align-content: center;
-    margin: 0 5%;
+    margin: 0 0% 0 15%;
 }
 
 ol li {
@@ -165,6 +257,8 @@ ol li img {
     height: auto;
 }
 
+
+/********************/
 /**code Sanne**/
 @media (prefers-reduced-motion:no-preference) {
     ol li img:hover {

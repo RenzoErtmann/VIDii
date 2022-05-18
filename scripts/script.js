@@ -1,21 +1,36 @@
 /*buttons*/
-var deButton1 = document.querySelector(".eerste");
-var deButton2 = document.querySelector(".tweede");
-var deButton3 = document.querySelector(".derde");
-var deButton4 = document.querySelector(".vierde");
-var deButton5 = document.querySelector(".vijfde");
-var deButton6 = document.querySelector(".zesde");
+var deButton1 = document.querySelector("section button:first-of-type");
+var deButton2 = document.querySelector("section button:nth-of-type(2)");
+var deButton3 = document.querySelector("section button:nth-of-type(3)");
+var deButton4 = document.querySelector("section button:nth-of-type(4)");
+var deButton5 = document.querySelector("section button:nth-of-type(5)");
+var deButton6 = document.querySelector("section button:nth-of-type(6)");
 
+
+/********************/
 /*aapjes*/
-var deEerste = document.querySelector(".eersteaap");
-var deTweede = document.querySelector(".tweedeaap");
-var deDerde = document.querySelector(".derdeaap");
-var deVierde = document.querySelector(".vierdeaap");
-var deVijfde = document.querySelector(".vijfdeaap");
-var deZesde = document.querySelector(".zesdeaap");
-
+var deEerste = document.querySelector("ol li:first-of-type img");
+var deTweede = document.querySelector("ol li:nth-of-type(2) img");
+var deDerde = document.querySelector("ol li:nth-of-type(3) img");
+var deVierde = document.querySelector("ol li:nth-of-type(4) img");
+var deVijfde = document.querySelector("ol li:nth-of-type(5) img");
+var deZesde = document.querySelector("ol li:nth-of-type(6) img");
 var isBlack = true;
 
+
+/********************/
+/*darkmodus*/
+var darkButton = document.querySelector("main > button");
+
+
+/********************/
+/*muziekje*/
+var music = document.querySelector("audio");
+var musicButton = document.querySelector("main > button:nth-of-type(2)");
+var isPlaying = false
+
+
+/********************/
 /*buttons laten klikken*/
 deButton1.addEventListener("click", ikBenGeklikt1);
 deButton2.addEventListener("click", ikBenGeklikt2);
@@ -24,6 +39,18 @@ deButton4.addEventListener("click", ikBenGeklikt4);
 deButton5.addEventListener("click", ikBenGeklikt5);
 deButton6.addEventListener("click", ikBenGeklikt6);
 
+
+/********************/
+/*darkmodus*/
+darkButton.addEventListener("click", ikBenDonker);
+
+
+/********************/
+/*muziekje*/
+musicButton.addEventListener("click", speelMuziek);
+
+
+/********************/
 /*button 1*/
 function ikBenGeklikt1() {
     deEerste.classList.toggle("ikHebKleurGekregen1");
@@ -81,5 +108,26 @@ function ikBenGeklikt6() {
         deZesde.src = "../images/DK_2014.png";
     } else {
         deZesde.src = "../images/DK_2014_bw.png";
+    }
+}
+
+
+/********************/
+/*darkmodus*/
+function ikBenDonker() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+}
+
+
+/********************/
+/*muziekje*/
+function speelMuziek() {
+    if (isPlaying) {
+        music.pause()
+        isPlaying = false
+    } else {
+        music.play()
+        isPlaying = true
     }
 }

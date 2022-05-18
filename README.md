@@ -14,7 +14,7 @@ Mijn startniveau is: rode piste
   <summary>De eerste versie/schets van je ontwerp & je persoonlijke uitdaging</summary>
 
   ### De eerste versie/schets:
-  <img src="readme-images/IMG_6673.JPG" width="375px" alt="eerste versie/schets">
+  <img src="images/IMG_6673.JPG" width="375px" alt="eerste versie/schets">
 
 
   ### Je ambitie: 

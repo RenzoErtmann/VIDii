@@ -55,9 +55,9 @@ musicButton.addEventListener("click", speelMuziek);
 function ikBenGeklikt1() {
     deEerste.classList.toggle("ikHebKleurGekregen1");
     if (deEerste.classList.contains("ikHebKleurGekregen1")) {
-        deEerste.src = "../images/DK_1986.svg";
+        deEerste.src = "images/DK_1986.svg";
     } else {
-        deEerste.src = "../images/DK_1986_bw.png";
+        deEerste.src = "images/DK_1986_bw.png";
     }
 }
 
@@ -65,9 +65,9 @@ function ikBenGeklikt1() {
 function ikBenGeklikt2() {
     deTweede.classList.toggle("ikHebKleurGekregen2");
     if (deTweede.classList.contains("ikHebKleurGekregen2")) {
-        deTweede.src = "../images/DK_1988.svg";
+        deTweede.src = "images/DK_1988.svg";
     } else {
-        deTweede.src = "../images/DK_1988_bw.png";
+        deTweede.src = "images/DK_1988_bw.png";
     }
 }
 
@@ -75,9 +75,9 @@ function ikBenGeklikt2() {
 function ikBenGeklikt3() {
     deDerde.classList.toggle("ikHebKleurGekregen3");
     if (deDerde.classList.contains("ikHebKleurGekregen3")) {
-        deDerde.src = "../images/DK_1994.png";
+        deDerde.src = "images/DK_1994.png";
     } else {
-        deDerde.src = "../images/DK_1994_bw.png";
+        deDerde.src = "images/DK_1994_bw.png";
     }
 }
 
@@ -85,9 +85,9 @@ function ikBenGeklikt3() {
 function ikBenGeklikt4() {
     deVierde.classList.toggle("ikHebKleurGekregen4");
     if (deVierde.classList.contains("ikHebKleurGekregen4")) {
-        deVierde.src = "../images/DK_1999.png";
+        deVierde.src = "images/DK_1999.png";
     } else {
-        deVierde.src = "../images/DK_1999_bw.png";
+        deVierde.src = "images/DK_1999_bw.png";
     }
 }
 
@@ -95,9 +95,9 @@ function ikBenGeklikt4() {
 function ikBenGeklikt5() {
     deVijfde.classList.toggle("ikHebKleurGekregen5");
     if (deVijfde.classList.contains("ikHebKleurGekregen5")) {
-        deVijfde.src = "../images/DK_2010.png";
+        deVijfde.src = "images/DK_2010.png";
     } else {
-        deVijfde.src = "../images/DK_2010_bw.png";
+        deVijfde.src = "images/DK_2010_bw.png";
     }
 }
 
@@ -105,9 +105,9 @@ function ikBenGeklikt5() {
 function ikBenGeklikt6() {
     deZesde.classList.toggle("ikHebKleurGekregen6");
     if (deZesde.classList.contains("ikHebKleurGekregen6")) {
-        deZesde.src = "../images/DK_2014.png";
+        deZesde.src = "images/DK_2014.png";
     } else {
-        deZesde.src = "../images/DK_2014_bw.png";
+        deZesde.src = "images/DK_2014_bw.png";
     }
 }
 
